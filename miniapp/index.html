@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Cooking Assistant — Mini App</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <header class="card__header">
+        <div>
+          <p class="eyebrow">AI Cooking Assistant</p>
+          <h1>Поделись продуктами</h1>
+          <p class="muted">
+            Введи ингредиенты и пожелания, а бот подготовит 3 рецепта сразу после отправки формы.
+          </p>
+        </div>
+        <span class="badge" id="status">Готов</span>
+      </header>
+
+      <form id="recipe-form" class="form">
+        <label class="form__field">
+          <span>Список продуктов</span>
+          <textarea
+            id="ingredients"
+            placeholder="Например: куриная грудка, брокколи, сливки, пармезан"
+            rows="4"
+            required
+          ></textarea>
+        </label>
+
+        <label class="form__field">
+          <span>Тип питания (опционально)</span>
+          <select id="diet">
+            <option value="">Не важно</option>
+            <option value="вегетарианские блюда">Вегетарианское</option>
+            <option value="веганские рецепты">Веганское</option>
+            <option value="без глютена">Без глютена</option>
+            <option value="низкоуглеводные блюда">Низкоуглеводное</option>
+          </select>
+        </label>
+
+        <label class="form__field">
+          <span>Цель/настроение</span>
+          <input
+            id="goal"
+            type="text"
+            placeholder="Ужин за 20 минут, блюдо без духовки и т.д."
+          />
+        </label>
+
+        <section class="chips">
+          <p class="chips__title">Дополнительно</p>
+          <label class="chip">
+            <input type="checkbox" name="extras" value="минимум посуды" />
+            <span>Меньше посуды</span>
+          </label>
+          <label class="chip">
+            <input type="checkbox" name="extras" value="острые вкусы" />
+            <span>Острота</span>
+          </label>
+          <label class="chip">
+            <input type="checkbox" name="extras" value="детское меню" />
+            <span>Для детей</span>
+          </label>
+        </section>
+
+        <button type="submit" class="button" id="submit-btn">Отправить в бота</button>
+      </form>
+    </main>
+
+    <script src="/static/main.js"></script>
+  </body>
+</html>
+
